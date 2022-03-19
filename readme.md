@@ -16,7 +16,6 @@
 ========Dockerfile============
 
 - Instructions for packaging apps
--
 
 =========IMAGE (Packaged snapshot of an app)=========
 
@@ -26,7 +25,7 @@
 - 3rd party libs
 - Env variables
 
-==========CREATE IMAGE=========
+==========COMMANDS=========
 
 - BUILD => docker build -t node-docker .(DOCKERFILE_DIR)
 - LIST_DOCKER_IMAGES => docker image ls
