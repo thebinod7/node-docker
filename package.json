@@ -6,9 +6,10 @@
   "author": "Binod Chaudhary <thebinod7@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start":"nodemon app.js"
+    "start": "nodemon app.js"
   },
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7"
   }
 }

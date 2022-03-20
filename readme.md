@@ -34,3 +34,4 @@
 - RUN_DETACHED_MODE => docker run -p HOST_PORT:CONTAINER_PORT -d <your username>/TAG_NAME
 - PULL_IMAGE => docker pull IMAGE_NAME
 - LIST_RUNNING_CONTAINERS => docker ps OR docker ps -a
+- REMOVE_STOPPED_CONTAINER_AND_IMAGES => docker system prune -a
