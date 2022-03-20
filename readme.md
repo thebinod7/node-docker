@@ -29,7 +29,8 @@
 
 - BUILD => docker build -t node-docker .(DOCKERFILE_DIR)
 - LIST_DOCKER_IMAGES => docker image ls
-- RUN_DOCKER_IMAGE => docker run node-docker (TAG_NAME)
-- RUN_DOCKER_IMAGE_INTERACTIVE=> docker run -it node-docker (TAG_NAME)
+- RUN_IMAGE => docker run node-docker (TAG_NAME)
+- RUN_IMAGE_INTERACTIVE => docker run -it node-docker (TAG_NAME)
+- RUN_DETACHED_MODE => docker run -p HOST_PORT:CONTAINER_PORT -d <your username>/TAG_NAME
 - PULL_IMAGE => docker pull IMAGE_NAME
 - LIST_RUNNING_CONTAINERS => docker ps OR docker ps -a
