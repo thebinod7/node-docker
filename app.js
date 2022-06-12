@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 
 const PORT = 4040;
 const HOST = "127.0.0.1";
-const MONGO_PORT = 27017;
+
+const DB_URL = "mongodb://localhost:8080/student_db";
 
 const studentSchema = new mongoose.Schema({
   roll_no: { type: Number, required: true },
@@ -14,16 +15,13 @@ const Student = mongoose.model("Student", studentSchema);
 
 const app = express();
 
-mongoose.connect(`mongodb://${HOST}:${MONGO_PORT}/student_db`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// Connect to MongoDB
+mongoose
+  .connect(DB_URL, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log(err));
 
-app.get("/", (req, res) => {
-  res.send("Hello world");
-});
-
-app.get("/list-student", async (req, res) => {
+app.get("/", async (req, res) => {
   const docs = await Student.find({});
   return res.json({ success: true, docs });
 });

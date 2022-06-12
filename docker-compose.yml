@@ -1,0 +1,55 @@
+# version: "3"
+# services:
+#   server-app:
+#     container_name: node-express
+#     image: node-express
+#     restart: always
+#     build: .
+#     volumes:
+#       - .:/usr/src/app
+#     ports:
+#       - "4040:4040"
+#     links:
+#       - mongo
+#   mongo:
+#     container_name: mongo_db
+#     image: mongo:5.0.6
+#     command: mongod --port 27018 --bind_ip_all
+#     volumes:
+#       - mongodb_store:/data/db
+#     ports:
+#       - "27018:27017"
+# volumes:
+#   mongodb_store: null
+
+# version: "3"
+# services:
+#   app:
+#     container_name: app
+#     restart: always
+#     build: .
+#     ports:
+#       - "4040:4040"
+#     links:
+#       - mongo
+#   mongo:
+#     container_name: mongo
+#     image: mongo:5.0.6
+#     ports:
+#       - "27017:27017"
+
+version: "3"
+services:
+  app:
+    container_name: docker-node-mongo
+    restart: always
+    build: .
+    ports:
+      - "4040:4040"
+    external_links:
+      - mongo
+  mongo-docker:
+    container_name: mongo-docker-abc
+    image: mongo
+    ports:
+      - 8080:27017

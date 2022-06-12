@@ -1,0 +1,5 @@
+Create node and react app
+Dockerize node app and run with container
+Use mongodb as data volume
+Run node and react app with docker compose
+Deploy app using docker
